@@ -16,6 +16,6 @@ program
   .action(initAction)
 program
   .command('update')
-  .description('更新列表')
+  .description('更新模版列表')
   .action(updateAction)
 program.parse(process.argv)
