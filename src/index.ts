@@ -1,5 +1,3 @@
-import path from 'path'
-
 import program from 'commander';
 
 import initAction from './actions/init'
