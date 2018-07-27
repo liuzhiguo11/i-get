@@ -4,7 +4,7 @@ import initAction from './actions/init'
 import listAction from './actions/list'
 import updateAction from './actions/update'
 
-program.version('0.0.1')
+program.version('0.0.2')
 program
   .command('list')
   .description('获取模版列表')

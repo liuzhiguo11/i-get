@@ -1,14 +1,14 @@
 {
-  "name": "i-get",
-  "version": "0.0.1",
+  "name": "simple-get-cli",
+  "version": "0.0.2",
   "description": "基于TypeScript开发的Node.js脚手架",
   "bin": {
     "i-get": "./bin/node"
   },
   "scripts": {
     "dev": "npm link && tsc -w",
-    "prepare": "npm run rebuild",
-    "build": "tsc -p .",
+    "prepare": "npm run build",
+    "build": "tsc",
     "rebuild": "npm run clean && npm run build",
     "test": "echo See directory sources/tests",
     "clean": "rm -rf built"
@@ -26,8 +26,7 @@
     "@types/log-symbols": "^2.0.0",
     "@types/node": "^10.5.2",
     "@types/ora": "^1.3.4",
-    "ts-loader": "^4.4.2",
-    "typescript": "^2.9.2"
+    "ts-loader": "^4.4.2"
   },
   "dependencies": {
     "chalk": "^2.4.1",
@@ -36,9 +35,10 @@
     "handlebars": "^4.0.11",
     "inquirer": "^6.0.0",
     "log-symbols": "^2.2.0",
-    "ora": "^3.0.0"
+    "ora": "^3.0.0",
+    "typescript": "^2.9.2"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/liuzhiguo11/i-get.git"
   }
