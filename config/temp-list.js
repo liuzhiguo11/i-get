@@ -1,1 +1,1 @@
-module.exports=['temp-1','temp-2']
+module.exports=['antd-ts','temp-1','temp-2']

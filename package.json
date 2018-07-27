@@ -2,14 +2,16 @@
   "name": "i-get",
   "version": "0.0.1",
   "description": "基于TypeScript开发的Node.js脚手架",
-  "private": true,
   "bin": {
     "i-get": "./bin/node"
   },
   "scripts": {
     "dev": "npm link && tsc -w",
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepare": "npm run rebuild",
+    "build": "tsc -p .",
+    "rebuild": "npm run clean && npm run build",
+    "test": "echo See directory sources/tests",
+    "clean": "rm -rf built"
   },
   "keywords": [
     "cli"
