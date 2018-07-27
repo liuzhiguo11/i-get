@@ -16,7 +16,7 @@
   "keywords": [
     "cli"
   ],
-  "author": "liuzghiguo <lzg46153@126.com>",
+  "author": "big-liu <805539101@qq.com>",
   "license": "MIT",
   "devDependencies": {
     "@types/chalk": "^2.2.0",
@@ -37,5 +37,9 @@
     "inquirer": "^6.0.0",
     "log-symbols": "^2.2.0",
     "ora": "^3.0.0"
+  },
+  "repository":{
+    "type": "git",
+    "url": "git+https://github.com/liuzhiguo11/i-get.git"
   }
 }
