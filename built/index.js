@@ -7,7 +7,7 @@ const commander_1 = __importDefault(require("commander"));
 const init_1 = __importDefault(require("./actions/init"));
 const list_1 = __importDefault(require("./actions/list"));
 const update_1 = __importDefault(require("./actions/update"));
-commander_1.default.version('0.0.2');
+commander_1.default.version('0.0.3');
 commander_1.default
     .command('list')
     .description('获取模版列表')

@@ -1,6 +1,6 @@
 {
   "name": "simple-get-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "基于TypeScript开发的Node.js脚手架",
   "bin": {
     "i-get": "./bin/node"
