@@ -9,7 +9,13 @@ declare module 'download-git-repo' {
   export default download;
 }
 
-declare module '*temp-list' {
-  const Value: string[];
+declare module '*config.json' {
+  interface IConfig {
+    templateList: string[];
+    gitPath: string
+  }
+
+  const Value: IConfig;
   export default Value;
 }
+

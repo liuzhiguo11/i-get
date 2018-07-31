@@ -1,9 +1,10 @@
-import templateList from '../../config/temp-list'
+import configObj from '../../config/config.json'
 import {showList} from "../utils";
 
 export default function () {
-  const tempList = templateList.map((item) => {
+  const tempList = configObj.templateList.map((item) => {
     return ` - ${item}`
   })
+  console.log(typeof configObj)
   showList(tempList)
 }

@@ -2,23 +2,22 @@ import fs from 'fs'
 import download from 'download-git-repo'
 import ora from 'ora'
 
-import templateList from '../../config/temp-list'
+import configObj from '../../config/config.json'
 import {showFail, showSuccess} from "../utils";
 import inquirer from "inquirer";
-import setting from "../setting";
 import handlebars from "handlebars";
 
 export default function (name: string, options: any) {
   if (!fs.existsSync(name)) {
     if (options.type) {
-      if (templateList.indexOf(options.type) !== -1) {
+      if (configObj.templateList.indexOf(options.type) !== -1) {
         initProject(options.type)
       } else {
         showFail('没有对应类型的模版！')
       }
     } else {
       inquirer.prompt([
-        {type: 'list', name: 'type', message: '请选择模版:', choices: templateList}
+        {type: 'list', name: 'type', message: '请选择模版:', choices: configObj.templateList}
       ]).then((answers: any) => {
         initProject(answers.type)
       })
@@ -35,7 +34,7 @@ function initProject(type: string) {
   ]).then((answers: any) => {
     const spinner = ora('正在下载模版...')
     spinner.start()
-    download(setting.gitPath + '#' + type, name, err => {
+    download(configObj.gitPath + '#' + type, name, err => {
       if (err) {
         spinner.fail()
         showFail('模版下载失败！')

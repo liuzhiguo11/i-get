@@ -6,15 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const fs_1 = __importDefault(require("fs"));
 const download_git_repo_1 = __importDefault(require("download-git-repo"));
 const ora_1 = __importDefault(require("ora"));
-const temp_list_1 = __importDefault(require("../../config/temp-list"));
+const config_json_1 = __importDefault(require("../../config/config.json"));
 const utils_1 = require("../utils");
 const inquirer_1 = __importDefault(require("inquirer"));
-const setting_1 = __importDefault(require("../setting"));
 const handlebars_1 = __importDefault(require("handlebars"));
 function default_1(name, options) {
     if (!fs_1.default.existsSync(name)) {
         if (options.type) {
-            if (temp_list_1.default.indexOf(options.type) !== -1) {
+            if (config_json_1.default.templateList.indexOf(options.type) !== -1) {
                 initProject(options.type);
             }
             else {
@@ -23,7 +22,7 @@ function default_1(name, options) {
         }
         else {
             inquirer_1.default.prompt([
-                { type: 'list', name: 'type', message: '请选择模版:', choices: temp_list_1.default }
+                { type: 'list', name: 'type', message: '请选择模版:', choices: config_json_1.default.templateList }
             ]).then((answers) => {
                 initProject(answers.type);
             });
@@ -41,7 +40,7 @@ function initProject(type) {
     ]).then((answers) => {
         const spinner = ora_1.default('正在下载模版...');
         spinner.start();
-        download_git_repo_1.default(setting_1.default.gitPath + '#' + type, name, err => {
+        download_git_repo_1.default(config_json_1.default.gitPath + '#' + type, name, err => {
             if (err) {
                 spinner.fail();
                 utils_1.showFail('模版下载失败！');
