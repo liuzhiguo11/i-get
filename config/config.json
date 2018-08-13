@@ -1,8 +1,1 @@
-{
-  "templateList": [
-    "antd-ts",
-    "temp-1",
-    "temp-2"
-  ],
-  "gitPath": "bitbucket:liuzhiguo11/i-get-templates"
-}
+{"templateList":["antd-ts","temp-1","temp-2"],"gitPath":"bitbucket:liuzhiguo11/i-get-templates"}

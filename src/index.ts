@@ -4,7 +4,7 @@ import initAction from './actions/init'
 import listAction from './actions/list'
 import configAction from './actions/setConfig'
 
-program.version('0.0.3')
+program.version('0.0.4')
 program
   .command('list')
   .description('获取模板列表')
