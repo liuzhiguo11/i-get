@@ -12,8 +12,12 @@ npm run build
 ```
 
 使用：
+> 全局安装：
+```bash
+npm i simple-get-cli -g
+```
 > 修改模板配置 i-get config
 
 > 获取模版列表 i-get list
 
-> 初始化项目  i-get init <项目名> -t <模版名> 或  i-get init <项目名> --type=<模版名>
+> 初始化项目  i-get init <项目名> -t <模版名>  或  i-get init <项目名> --type=<模版名>
