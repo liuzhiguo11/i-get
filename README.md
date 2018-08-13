@@ -12,7 +12,7 @@ npm run build
 ```
 
 使用：
-> 更新模版列表 i-get update
+> 修改模板配置 i-get config
 
 > 获取模版列表 i-get list
 
