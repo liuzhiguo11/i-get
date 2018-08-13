@@ -9,7 +9,6 @@ function default_1() {
     const tempList = config_json_1.default.templateList.map((item) => {
         return ` - ${item}`;
     });
-    console.log(typeof config_json_1.default);
     utils_1.showList(tempList);
 }
 exports.default = default_1;

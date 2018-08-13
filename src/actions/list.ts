@@ -5,6 +5,5 @@ export default function () {
   const tempList = configObj.templateList.map((item) => {
     return ` - ${item}`
   })
-  console.log(typeof configObj)
   showList(tempList)
 }

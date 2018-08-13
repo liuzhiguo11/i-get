@@ -2,12 +2,12 @@ import program from 'commander';
 
 import initAction from './actions/init'
 import listAction from './actions/list'
-import updateAction from './actions/update'
+import configAction from './actions/setConfig'
 
 program.version('0.0.3')
 program
   .command('list')
-  .description('获取模版列表')
+  .description('获取模板列表')
   .action(listAction)
 program
   .command('init <name>')
@@ -15,7 +15,7 @@ program
   .option('-t ,--type <type>')
   .action(initAction)
 program
-  .command('update')
-  .description('更新模版列表')
-  .action(updateAction)
+  .command('config')
+  .description('参数设置')
+  .action(configAction)
 program.parse(process.argv)

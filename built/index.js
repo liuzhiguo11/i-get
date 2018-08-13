@@ -6,11 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = __importDefault(require("commander"));
 const init_1 = __importDefault(require("./actions/init"));
 const list_1 = __importDefault(require("./actions/list"));
-const update_1 = __importDefault(require("./actions/update"));
+const setConfig_1 = __importDefault(require("./actions/setConfig"));
 commander_1.default.version('0.0.3');
 commander_1.default
     .command('list')
-    .description('获取模版列表')
+    .description('获取模板列表')
     .action(list_1.default);
 commander_1.default
     .command('init <name>')
@@ -18,7 +18,7 @@ commander_1.default
     .option('-t ,--type <type>')
     .action(init_1.default);
 commander_1.default
-    .command('update')
-    .description('更新模版列表')
-    .action(update_1.default);
+    .command('config')
+    .description('参数设置')
+    .action(setConfig_1.default);
 commander_1.default.parse(process.argv);

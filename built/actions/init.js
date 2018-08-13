@@ -14,17 +14,17 @@ function default_1(name, options) {
     if (!fs_1.default.existsSync(name)) {
         if (options.type) {
             if (config_json_1.default.templateList.indexOf(options.type) !== -1) {
-                initProject(options.type);
+                initProject(options.type, name);
             }
             else {
-                utils_1.showFail('没有对应类型的模版！');
+                utils_1.showFail('没有对应类型的模板！');
             }
         }
         else {
             inquirer_1.default.prompt([
-                { type: 'list', name: 'type', message: '请选择模版:', choices: config_json_1.default.templateList }
+                { type: 'list', name: 'type', message: '请选择模板:', choices: config_json_1.default.templateList }
             ]).then((answers) => {
-                initProject(answers.type);
+                initProject(answers.type, name);
             });
         }
     }
@@ -33,17 +33,17 @@ function default_1(name, options) {
     }
 }
 exports.default = default_1;
-function initProject(type) {
+function initProject(type, name) {
     inquirer_1.default.prompt([
         { name: 'description', message: '请输入项目描述:' },
         { name: 'author', message: '请输入作者名称:' }
     ]).then((answers) => {
-        const spinner = ora_1.default('正在下载模版...');
+        const spinner = ora_1.default('正在下载模板...');
         spinner.start();
         download_git_repo_1.default(config_json_1.default.gitPath + '#' + type, name, err => {
             if (err) {
                 spinner.fail();
-                utils_1.showFail('模版下载失败！');
+                utils_1.showFail('模板下载失败！');
             }
             else {
                 spinner.succeed();
